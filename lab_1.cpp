@@ -1,14 +1,64 @@
 ﻿// lab_1.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 //
+#define _USE_MATH_DEFINES 
 
 #include <iostream>
 
-int main()
-{
-    std::cout << "Hello World!\n";
+void task_1() {
+	float a, b;
+
+	printf("Введите катеты через пробел: ");
+
+	scanf_s("%f%f", &a, &b);
+
+	printf("Гипотенуза: %5.2f\n", sqrtf(a * a + b * b));
+	printf("Угол 1: %5.2f градусов\n", atan(a / b) * 180 / M_PI);
+	printf("Угол 2: %5.2f градусов\n", atan(b / a) * 180 / M_PI);
+
+	system("pause");
 }
 
-// Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
+void task_2() {
+
+	int N;
+
+	std::cout << "Введите N в сантиметрах: ";
+	std::cin >> N;
+
+	std::cout << "Метров: " << N / 100 << std::endl;
+	std::cout << "Сантиметров: " << N % 100 << std::endl;
+
+	system("pause");
+}
+
+void task_3() {
+	double x;
+
+	printf("Введите х: ");
+
+	scanf_s("%lf", &x);
+
+	double r_0 = x * x;
+	double r_1 = 2.7 * M_PI * cos(sqrt(abs(pow(x, 3)))) - 2.0;
+	double r_2 = pow(M_E, x);
+
+	printf("Результат: %f\n",
+		pow(r_0 + r_1, 1.0 / 7.0) + r_2
+	);
+
+	system("pause");
+}
+
+int main()
+{
+	std::setlocale(LC_ALL, "");
+
+	//task_1();
+	//task_2();
+	task_3();
+}
+
+//Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
 // Отладка программы: F5 или меню "Отладка" > "Запустить отладку"
 
 // Советы по началу работы 
