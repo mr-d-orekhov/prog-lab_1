@@ -4,7 +4,7 @@
 
 #include <iostream>
 
-void task_1() {
+void static task_1() {
 	float a, b;
 
 	printf("Введите катеты через пробел: ");
@@ -12,13 +12,13 @@ void task_1() {
 	scanf_s("%f%f", &a, &b);
 
 	printf("Гипотенуза: %5.2f\n", sqrtf(a * a + b * b));
-	printf("Угол 1: %5.2f градусов\n", atan(a / b) * 180 / M_PI);
-	printf("Угол 2: %5.2f градусов\n", atan(b / a) * 180 / M_PI);
+	printf("Угол 1: %5.2f градусов\n", atan(a / b) * 180.0 / M_PI);
+	printf("Угол 2: %5.2f градусов\n", atan(b / a) * 180.0 / M_PI);
 
 	system("pause");
 }
 
-void task_2() {
+void static task_2() {
 
 	int N;
 
@@ -31,12 +31,14 @@ void task_2() {
 	system("pause");
 }
 
-void task_3() {
+void static task_3() {
 	double x;
 
 	printf("Введите х: ");
 
-	scanf_s("%lf", &x);
+	int y = scanf_s("%lf", &x);
+
+	std::cout << "y = " << y << std::endl;
 
 	double r_0 = x * x;
 	double r_1 = 2.7 * M_PI * cos(sqrt(abs(pow(x, 3)))) - 2.0;
