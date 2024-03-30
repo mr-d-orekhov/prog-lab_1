@@ -24,13 +24,17 @@ void static task_1() {
 
 void static task_2() {
 
-	int N;
+	int N, M, CM;
 
-	std::cout << "Введите N в сантиметрах: ";
-	std::cin >> N;
+	printf("Введите N в сантиметрах: ");
 
-	std::cout << "Метров: " << N / 100 << std::endl;
-	std::cout << "Сантиметров: " << N % 100 << std::endl;
+	scanf_s("%i", &N);
+
+	M = N / 100;
+	CM = N % 100;
+
+	printf("Метров: %i\n", M);
+	printf("Сантиметров: %i\n", CM);
 
 	system("pause");
 }
@@ -40,17 +44,15 @@ void static task_3() {
 
 	printf("Введите х: ");
 
-	int y = scanf_s("%lf", &x);
-
-	std::cout << "y = " << y << std::endl;
+	scanf_s("%f", &x);
 
 	double r_0 = x * x;
 	double r_1 = 2.7 * M_PI * cos(sqrt(abs(pow(x, 3)))) - 2.0;
 	double r_2 = pow(M_E, x);
 
-	printf("Результат: %f\n",
-		pow(r_0 + r_1, 1.0 / 7.0) + r_2
-	);
+	double r = pow(r_0 + r_1, 1.0 / 7.0) + r_2;
+
+	printf("Результат: %f\n", r);
 
 	system("pause");
 }
@@ -59,9 +61,9 @@ int main()
 {
 	std::setlocale(LC_ALL, "");
 
-	task_1();
+	//task_1();
 	//task_2();
-	//task_3();
+	task_3();
 }
 
 //Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
