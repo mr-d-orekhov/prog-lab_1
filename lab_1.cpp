@@ -5,15 +5,19 @@
 #include <iostream>
 
 void static task_1() {
-	float a, b;
+	float a, b, angle_1, angle_2, hypotenuse;
 
 	printf("Введите катеты через пробел: ");
 
 	scanf_s("%f%f", &a, &b);
 
-	printf("Гипотенуза: %5.2f\n", sqrtf(a * a + b * b));
-	printf("Угол 1: %5.2f градусов\n", atan(a / b) * 180.0 / M_PI);
-	printf("Угол 2: %5.2f градусов\n", atan(b / a) * 180.0 / M_PI);
+	hypotenuse = sqrtf(a * a + b * b);
+	angle_1 = atan(a / b) * 180.0 / M_PI;
+	angle_2 = atan(b / a) * 180.0 / M_PI;
+
+	printf("Гипотенуза: %5.2f\n", hypotenuse);
+	printf("Угол 1: %5.2f градусов\n", angle_1);
+	printf("Угол 2: %5.2f градусов\n", angle_2);
 
 	system("pause");
 }
@@ -55,9 +59,9 @@ int main()
 {
 	std::setlocale(LC_ALL, "");
 
-	//task_1();
+	task_1();
 	//task_2();
-	task_3();
+	//task_3();
 }
 
 //Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
